@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/clientController');
+const clientController = require('../controllers/clientController');
 
-router.get('/', controller.getAll);
-router.post('/', controller.create);
+router.get('/', clientController.getAll);
+router.post('/', clientController.create);
+router.put('/:id', clientController.update);
+router.delete('/:id', clientController.remove);
 
 module.exports = router;
