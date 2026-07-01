@@ -1,0 +1,802 @@
+[
+  {
+    "id": "REC-0001",
+    "name": "Ananya Bose",
+    "email": "ananya.bose@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0002",
+    "name": "Aarohi Sen",
+    "email": "aarohi.sen@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0003",
+    "name": "Priya Iyer",
+    "email": "priya.iyer@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0004",
+    "name": "Riya Kumar",
+    "email": "riya.kumar@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0005",
+    "name": "Vivaan Nair",
+    "email": "vivaan.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0006",
+    "name": "Kiran Shah",
+    "email": "kiran.shah@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0007",
+    "name": "Rakesh Pillai",
+    "email": "rakesh.pillai@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0008",
+    "name": "Aarav Nair",
+    "email": "aarav.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0009",
+    "name": "Aarav Patel",
+    "email": "aarav.patel@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0010",
+    "name": "Sunil Reddy",
+    "email": "sunil.reddy@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0011",
+    "name": "Sunil Chatterjee",
+    "email": "sunil.chatterjee@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0012",
+    "name": "Ravi Sen",
+    "email": "ravi.sen@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0013",
+    "name": "Sanjay Sharma",
+    "email": "sanjay.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0014",
+    "name": "Diya Rao",
+    "email": "diya.rao@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0015",
+    "name": "Vivaan Kulkarni",
+    "email": "vivaan.kulkarni@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0016",
+    "name": "Ramesh Nair",
+    "email": "ramesh.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0017",
+    "name": "Ritu Chauhan",
+    "email": "ritu.chauhan@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0018",
+    "name": "Aarohi Verma",
+    "email": "aarohi.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0019",
+    "name": "Suresh Das",
+    "email": "suresh.das@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0020",
+    "name": "Raj Jain",
+    "email": "raj.jain@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0021",
+    "name": "Vikram Verma",
+    "email": "vikram.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0022",
+    "name": "Ritu Singh",
+    "email": "ritu.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0023",
+    "name": "Advik Sharma",
+    "email": "advik.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Inactive"
+  },
+  {
+    "id": "REC-0024",
+    "name": "Riya Shah",
+    "email": "riya.shah@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0025",
+    "name": "Suresh Gupta",
+    "email": "suresh.gupta@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0026",
+    "name": "Vivaan Nair",
+    "email": "vivaan.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0027",
+    "name": "Rakesh Verma",
+    "email": "rakesh.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0028",
+    "name": "Ramesh Joshi",
+    "email": "ramesh.joshi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0029",
+    "name": "Ravi Shah",
+    "email": "ravi.shah@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0030",
+    "name": "Riya Singh",
+    "email": "riya.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0031",
+    "name": "Diya Jain",
+    "email": "diya.jain@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0032",
+    "name": "Suresh Das",
+    "email": "suresh.das@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0033",
+    "name": "Ananya Agarwal",
+    "email": "ananya.agarwal@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0034",
+    "name": "Aarohi Sen",
+    "email": "aarohi.sen@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0035",
+    "name": "Vivaan Kumar",
+    "email": "vivaan.kumar@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0036",
+    "name": "Nitin Bhattacharya",
+    "email": "nitin.bhattacharya@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0037",
+    "name": "Sanjay Agarwal",
+    "email": "sanjay.agarwal@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0038",
+    "name": "Advik Das",
+    "email": "advik.das@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0039",
+    "name": "Kiran Patel",
+    "email": "kiran.patel@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0040",
+    "name": "Rohan Agarwal",
+    "email": "rohan.agarwal@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0041",
+    "name": "Anaya Jain",
+    "email": "anaya.jain@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0042",
+    "name": "Vivaan Singh",
+    "email": "vivaan.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0043",
+    "name": "Suresh Kulkarni",
+    "email": "suresh.kulkarni@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0044",
+    "name": "Ramesh Kumar",
+    "email": "ramesh.kumar@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0045",
+    "name": "Shruti Shah",
+    "email": "shruti.shah@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0046",
+    "name": "Kavita Bhattacharya",
+    "email": "kavita.bhattacharya@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0047",
+    "name": "Sneha Sharma",
+    "email": "sneha.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0048",
+    "name": "Ramesh Joshi",
+    "email": "ramesh.joshi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0049",
+    "name": "Ananya Iyer",
+    "email": "ananya.iyer@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0050",
+    "name": "Priya Das",
+    "email": "priya.das@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0051",
+    "name": "Amit Reddy",
+    "email": "amit.reddy@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0052",
+    "name": "Manoj Patel",
+    "email": "manoj.patel@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0053",
+    "name": "Sunil Iyer",
+    "email": "sunil.iyer@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0054",
+    "name": "Sanjay Sharma",
+    "email": "sanjay.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0055",
+    "name": "Rohan Deshmukh",
+    "email": "rohan.deshmukh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0056",
+    "name": "Kavita Deshmukh",
+    "email": "kavita.deshmukh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0057",
+    "name": "Vivaan Sharma",
+    "email": "vivaan.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0058",
+    "name": "Rakesh Kulkarni",
+    "email": "rakesh.kulkarni@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0059",
+    "name": "Kiran Sharma",
+    "email": "kiran.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Inactive"
+  },
+  {
+    "id": "REC-0060",
+    "name": "Sanjay Agarwal",
+    "email": "sanjay.agarwal@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0061",
+    "name": "Kabir Joshi",
+    "email": "kabir.joshi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0062",
+    "name": "Sanjay Kulkarni",
+    "email": "sanjay.kulkarni@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0063",
+    "name": "Sanjay Pillai",
+    "email": "sanjay.pillai@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0064",
+    "name": "Vivaan Iyer",
+    "email": "vivaan.iyer@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0065",
+    "name": "Neha Nair",
+    "email": "neha.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0066",
+    "name": "Aarav Joshi",
+    "email": "aarav.joshi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0067",
+    "name": "Sanjay Jain",
+    "email": "sanjay.jain@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0068",
+    "name": "Advik Verma",
+    "email": "advik.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0069",
+    "name": "Raj Chatterjee",
+    "email": "raj.chatterjee@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0070",
+    "name": "Aarav Nair",
+    "email": "aarav.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0071",
+    "name": "Ravi Chatterjee",
+    "email": "ravi.chatterjee@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0072",
+    "name": "Raj Joshi",
+    "email": "raj.joshi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0073",
+    "name": "Shruti Sharma",
+    "email": "shruti.sharma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0074",
+    "name": "Aarav Nair",
+    "email": "aarav.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0075",
+    "name": "Rakesh Nair",
+    "email": "rakesh.nair@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0076",
+    "name": "Riya Bhattacharya",
+    "email": "riya.bhattacharya@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0077",
+    "name": "Nitin Agarwal",
+    "email": "nitin.agarwal@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0078",
+    "name": "Aarohi Pillai",
+    "email": "aarohi.pillai@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0079",
+    "name": "Vihaan Sen",
+    "email": "vihaan.sen@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0080",
+    "name": "Rahul Reddy",
+    "email": "rahul.reddy@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0081",
+    "name": "Karan Singh",
+    "email": "karan.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0082",
+    "name": "Pooja Bhattacharya",
+    "email": "pooja.bhattacharya@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0083",
+    "name": "Arjun Deshmukh",
+    "email": "arjun.deshmukh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0084",
+    "name": "Pooja Verma",
+    "email": "pooja.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0085",
+    "name": "Simran Bose",
+    "email": "simran.bose@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0086",
+    "name": "Raj Singh",
+    "email": "raj.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0087",
+    "name": "Rohan Shah",
+    "email": "rohan.shah@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0088",
+    "name": "Sneha Kumar",
+    "email": "sneha.kumar@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0089",
+    "name": "Rakesh Singh",
+    "email": "rakesh.singh@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0090",
+    "name": "Raj Bose",
+    "email": "raj.bose@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0091",
+    "name": "Kavita Mehta",
+    "email": "kavita.mehta@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0092",
+    "name": "Nisha Kulkarni",
+    "email": "nisha.kulkarni@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0093",
+    "name": "Neha Verma",
+    "email": "neha.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0094",
+    "name": "Sneha Trivedi",
+    "email": "sneha.trivedi@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0095",
+    "name": "Vikram Patel",
+    "email": "vikram.patel@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0096",
+    "name": "Rakesh Chauhan",
+    "email": "rakesh.chauhan@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0097",
+    "name": "Vivaan Das",
+    "email": "vivaan.das@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0098",
+    "name": "Karan Pillai",
+    "email": "karan.pillai@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0099",
+    "name": "Raj Pillai",
+    "email": "raj.pillai@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "REC-0100",
+    "name": "Kavita Verma",
+    "email": "kavita.verma@recruitmatrix.com",
+    "role": "Recruiter",
+    "department": "Marketing",
+    "status": "Active"
+  }
+]

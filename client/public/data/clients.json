@@ -1,0 +1,502 @@
+[
+  {
+    "id": "CLT-0001",
+    "name": "Infosys Technologies",
+    "contactPerson": "Riya Kumar",
+    "email": "contact@client1.com",
+    "phone": "+91 9819440646",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-06-14"
+  },
+  {
+    "id": "CLT-0002",
+    "name": "Oracle Technologies",
+    "contactPerson": "Nitin Deshmukh",
+    "email": "contact@client2.com",
+    "phone": "+91 9867872308",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-04-01"
+  },
+  {
+    "id": "CLT-0003",
+    "name": "Capgemini Solutions",
+    "contactPerson": "Vihaan Deshmukh",
+    "email": "contact@client3.com",
+    "phone": "+91 9826996797",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-03-22"
+  },
+  {
+    "id": "CLT-0004",
+    "name": "Oracle Solutions",
+    "contactPerson": "Vihaan Das",
+    "email": "contact@client4.com",
+    "phone": "+91 9879858146",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-06-12"
+  },
+  {
+    "id": "CLT-0005",
+    "name": "Accenture Solutions",
+    "contactPerson": "Ramesh Jain",
+    "email": "contact@client5.com",
+    "phone": "+91 9812205840",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-06-05"
+  },
+  {
+    "id": "CLT-0006",
+    "name": "Wipro Solutions",
+    "contactPerson": "Ananya Shah",
+    "email": "contact@client6.com",
+    "phone": "+91 9834237256",
+    "city": "Bangalore",
+    "status": "Active",
+    "joinedDate": "2026-05-09"
+  },
+  {
+    "id": "CLT-0007",
+    "name": "Infosys Solutions",
+    "contactPerson": "Rakesh Nair",
+    "email": "contact@client7.com",
+    "phone": "+91 9844541014",
+    "city": "Mumbai",
+    "status": "Active",
+    "joinedDate": "2026-04-22"
+  },
+  {
+    "id": "CLT-0008",
+    "name": "Oracle Technologies",
+    "contactPerson": "Aarav Bhattacharya",
+    "email": "contact@client8.com",
+    "phone": "+91 9888690222",
+    "city": "Pune",
+    "status": "Active",
+    "joinedDate": "2026-06-28"
+  },
+  {
+    "id": "CLT-0009",
+    "name": "IBM Technologies",
+    "contactPerson": "Aarohi Chatterjee",
+    "email": "contact@client9.com",
+    "phone": "+91 9804871736",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-06-25"
+  },
+  {
+    "id": "CLT-0010",
+    "name": "Capgemini Solutions",
+    "contactPerson": "Kabir Pillai",
+    "email": "contact@client10.com",
+    "phone": "+91 9893249588",
+    "city": "Hyderabad",
+    "status": "Active",
+    "joinedDate": "2026-04-14"
+  },
+  {
+    "id": "CLT-0011",
+    "name": "Google Solutions",
+    "contactPerson": "Manoj Bhattacharya",
+    "email": "contact@client11.com",
+    "phone": "+91 9826761189",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-04-24"
+  },
+  {
+    "id": "CLT-0012",
+    "name": "Oracle Technologies",
+    "contactPerson": "Nisha Kulkarni",
+    "email": "contact@client12.com",
+    "phone": "+91 9894650695",
+    "city": "Delhi",
+    "status": "Active",
+    "joinedDate": "2026-06-04"
+  },
+  {
+    "id": "CLT-0013",
+    "name": "Google Technologies",
+    "contactPerson": "Kavita Bhattacharya",
+    "email": "contact@client13.com",
+    "phone": "+91 9818050678",
+    "city": "Hyderabad",
+    "status": "Active",
+    "joinedDate": "2026-04-29"
+  },
+  {
+    "id": "CLT-0014",
+    "name": "Wipro Solutions",
+    "contactPerson": "Rakesh Nair",
+    "email": "contact@client14.com",
+    "phone": "+91 9878645236",
+    "city": "Bangalore",
+    "status": "Inactive",
+    "joinedDate": "2026-04-08"
+  },
+  {
+    "id": "CLT-0015",
+    "name": "IBM Technologies",
+    "contactPerson": "Vihaan Mehta",
+    "email": "contact@client15.com",
+    "phone": "+91 9844480087",
+    "city": "Mumbai",
+    "status": "Active",
+    "joinedDate": "2026-04-19"
+  },
+  {
+    "id": "CLT-0016",
+    "name": "Infosys Solutions",
+    "contactPerson": "Sunil Gupta",
+    "email": "contact@client16.com",
+    "phone": "+91 9850819440",
+    "city": "Mumbai",
+    "status": "Inactive",
+    "joinedDate": "2026-03-24"
+  },
+  {
+    "id": "CLT-0017",
+    "name": "TCS Technologies",
+    "contactPerson": "Diya Chauhan",
+    "email": "contact@client17.com",
+    "phone": "+91 9846999862",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-05-21"
+  },
+  {
+    "id": "CLT-0018",
+    "name": "Wipro Solutions",
+    "contactPerson": "Kiran Deshmukh",
+    "email": "contact@client18.com",
+    "phone": "+91 9835183072",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-05-17"
+  },
+  {
+    "id": "CLT-0019",
+    "name": "Amazon Solutions",
+    "contactPerson": "Suresh Kulkarni",
+    "email": "contact@client19.com",
+    "phone": "+91 9812389076",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-06-13"
+  },
+  {
+    "id": "CLT-0020",
+    "name": "IBM Technologies",
+    "contactPerson": "Vivaan Bose",
+    "email": "contact@client20.com",
+    "phone": "+91 9828984372",
+    "city": "Pune",
+    "status": "Active",
+    "joinedDate": "2026-04-21"
+  },
+  {
+    "id": "CLT-0021",
+    "name": "Wipro Solutions",
+    "contactPerson": "Ramesh Agarwal",
+    "email": "contact@client21.com",
+    "phone": "+91 9880636510",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-04-11"
+  },
+  {
+    "id": "CLT-0022",
+    "name": "Infosys Technologies",
+    "contactPerson": "Priya Patel",
+    "email": "contact@client22.com",
+    "phone": "+91 9849221397",
+    "city": "Rajkot",
+    "status": "Inactive",
+    "joinedDate": "2026-06-17"
+  },
+  {
+    "id": "CLT-0023",
+    "name": "Oracle Solutions",
+    "contactPerson": "Neha Das",
+    "email": "contact@client23.com",
+    "phone": "+91 9831180419",
+    "city": "Mumbai",
+    "status": "Active",
+    "joinedDate": "2026-05-22"
+  },
+  {
+    "id": "CLT-0024",
+    "name": "Amazon Solutions",
+    "contactPerson": "Neha Rao",
+    "email": "contact@client24.com",
+    "phone": "+91 9873425643",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-04-18"
+  },
+  {
+    "id": "CLT-0025",
+    "name": "Wipro Technologies",
+    "contactPerson": "Vivaan Rao",
+    "email": "contact@client25.com",
+    "phone": "+91 9819112440",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-05-19"
+  },
+  {
+    "id": "CLT-0026",
+    "name": "Accenture Solutions",
+    "contactPerson": "Aarav Bhattacharya",
+    "email": "contact@client26.com",
+    "phone": "+91 9858634560",
+    "city": "Rajkot",
+    "status": "Inactive",
+    "joinedDate": "2026-03-15"
+  },
+  {
+    "id": "CLT-0027",
+    "name": "Google Solutions",
+    "contactPerson": "Neha Mehta",
+    "email": "contact@client27.com",
+    "phone": "+91 9834680943",
+    "city": "Vadodara",
+    "status": "Inactive",
+    "joinedDate": "2026-04-27"
+  },
+  {
+    "id": "CLT-0028",
+    "name": "Infosys Technologies",
+    "contactPerson": "Nisha Rao",
+    "email": "contact@client28.com",
+    "phone": "+91 9813794985",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-05-21"
+  },
+  {
+    "id": "CLT-0029",
+    "name": "TCS Solutions",
+    "contactPerson": "Ramesh Jain",
+    "email": "contact@client29.com",
+    "phone": "+91 9812373185",
+    "city": "Hyderabad",
+    "status": "Active",
+    "joinedDate": "2026-06-23"
+  },
+  {
+    "id": "CLT-0030",
+    "name": "Accenture Technologies",
+    "contactPerson": "Amit Singh",
+    "email": "contact@client30.com",
+    "phone": "+91 9849379994",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-05-28"
+  },
+  {
+    "id": "CLT-0031",
+    "name": "Wipro Solutions",
+    "contactPerson": "Vivaan Patel",
+    "email": "contact@client31.com",
+    "phone": "+91 9800211919",
+    "city": "Ahmedabad",
+    "status": "Inactive",
+    "joinedDate": "2026-06-19"
+  },
+  {
+    "id": "CLT-0032",
+    "name": "Wipro Solutions",
+    "contactPerson": "Arjun Kulkarni",
+    "email": "contact@client32.com",
+    "phone": "+91 9803416138",
+    "city": "Hyderabad",
+    "status": "Active",
+    "joinedDate": "2026-04-29"
+  },
+  {
+    "id": "CLT-0033",
+    "name": "Amazon Solutions",
+    "contactPerson": "Priya Rao",
+    "email": "contact@client33.com",
+    "phone": "+91 9828692063",
+    "city": "Pune",
+    "status": "Active",
+    "joinedDate": "2026-04-18"
+  },
+  {
+    "id": "CLT-0034",
+    "name": "Microsoft Solutions",
+    "contactPerson": "Riya Kulkarni",
+    "email": "contact@client34.com",
+    "phone": "+91 9801440602",
+    "city": "Mumbai",
+    "status": "Active",
+    "joinedDate": "2026-04-03"
+  },
+  {
+    "id": "CLT-0035",
+    "name": "Accenture Technologies",
+    "contactPerson": "Vivaan Bhattacharya",
+    "email": "contact@client35.com",
+    "phone": "+91 9884569015",
+    "city": "Pune",
+    "status": "Active",
+    "joinedDate": "2026-03-23"
+  },
+  {
+    "id": "CLT-0036",
+    "name": "Google Solutions",
+    "contactPerson": "Kabir Chatterjee",
+    "email": "contact@client36.com",
+    "phone": "+91 9865002792",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-06-28"
+  },
+  {
+    "id": "CLT-0037",
+    "name": "Wipro Technologies",
+    "contactPerson": "Raj Reddy",
+    "email": "contact@client37.com",
+    "phone": "+91 9835929339",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-05-22"
+  },
+  {
+    "id": "CLT-0038",
+    "name": "TCS Solutions",
+    "contactPerson": "Ananya Joshi",
+    "email": "contact@client38.com",
+    "phone": "+91 9836152518",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-06-07"
+  },
+  {
+    "id": "CLT-0039",
+    "name": "Microsoft Solutions",
+    "contactPerson": "Anaya Patel",
+    "email": "contact@client39.com",
+    "phone": "+91 9846525660",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-04-06"
+  },
+  {
+    "id": "CLT-0040",
+    "name": "Wipro Technologies",
+    "contactPerson": "Vihaan Das",
+    "email": "contact@client40.com",
+    "phone": "+91 9833963077",
+    "city": "Mumbai",
+    "status": "Active",
+    "joinedDate": "2026-05-20"
+  },
+  {
+    "id": "CLT-0041",
+    "name": "Wipro Solutions",
+    "contactPerson": "Amit Joshi",
+    "email": "contact@client41.com",
+    "phone": "+91 9848568418",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-03-29"
+  },
+  {
+    "id": "CLT-0042",
+    "name": "Google Solutions",
+    "contactPerson": "Karan Chatterjee",
+    "email": "contact@client42.com",
+    "phone": "+91 9812107280",
+    "city": "Bangalore",
+    "status": "Active",
+    "joinedDate": "2026-06-10"
+  },
+  {
+    "id": "CLT-0043",
+    "name": "Microsoft Solutions",
+    "contactPerson": "Priya Kumar",
+    "email": "contact@client43.com",
+    "phone": "+91 9876513403",
+    "city": "Rajkot",
+    "status": "Active",
+    "joinedDate": "2026-05-01"
+  },
+  {
+    "id": "CLT-0044",
+    "name": "Oracle Technologies",
+    "contactPerson": "Sanjay Mehta",
+    "email": "contact@client44.com",
+    "phone": "+91 9832549506",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-05-07"
+  },
+  {
+    "id": "CLT-0045",
+    "name": "Wipro Solutions",
+    "contactPerson": "Simran Pillai",
+    "email": "contact@client45.com",
+    "phone": "+91 9897513758",
+    "city": "Delhi",
+    "status": "Active",
+    "joinedDate": "2026-04-17"
+  },
+  {
+    "id": "CLT-0046",
+    "name": "Wipro Technologies",
+    "contactPerson": "Manoj Nair",
+    "email": "contact@client46.com",
+    "phone": "+91 9837224867",
+    "city": "Rajkot",
+    "status": "Active",
+    "joinedDate": "2026-05-21"
+  },
+  {
+    "id": "CLT-0047",
+    "name": "Capgemini Technologies",
+    "contactPerson": "Diya Sharma",
+    "email": "contact@client47.com",
+    "phone": "+91 9835469726",
+    "city": "Ahmedabad",
+    "status": "Active",
+    "joinedDate": "2026-03-30"
+  },
+  {
+    "id": "CLT-0048",
+    "name": "Wipro Technologies",
+    "contactPerson": "Aarohi Kulkarni",
+    "email": "contact@client48.com",
+    "phone": "+91 9863821284",
+    "city": "Vadodara",
+    "status": "Active",
+    "joinedDate": "2026-05-14"
+  },
+  {
+    "id": "CLT-0049",
+    "name": "Wipro Solutions",
+    "contactPerson": "Vikram Verma",
+    "email": "contact@client49.com",
+    "phone": "+91 9865159030",
+    "city": "Surat",
+    "status": "Active",
+    "joinedDate": "2026-04-03"
+  },
+  {
+    "id": "CLT-0050",
+    "name": "Wipro Solutions",
+    "contactPerson": "Manoj Verma",
+    "email": "contact@client50.com",
+    "phone": "+91 9800734180",
+    "city": "Pune",
+    "status": "Active",
+    "joinedDate": "2026-06-13"
+  }
+]

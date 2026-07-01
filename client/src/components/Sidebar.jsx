@@ -1,61 +1,53 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { cn } from '../lib/utils';
+import { Briefcase } from 'lucide-react';
 
-const modules = [
-  { name: 'Dashboard', path: '/dashboard', icon: '📊' },
-  { name: 'User Management', path: '/users', icon: '👤' },
-  { name: 'Role & Permission', path: '/roles', icon: '🔒' },
-  { name: 'Client Management', path: '/clients', icon: '🏢' },
-  { name: 'Master Management', path: '/master', icon: '⚙️' },
-  { name: 'Talent Requisition', path: '/requisitions', icon: '📝' },
-  { name: 'Approval Workflow', path: '/approvals', icon: '✅' },
-  { name: 'Allocation', path: '/allocations', icon: '👥' },
-  { name: 'Candidate Management', path: '/candidates', icon: '🎓' },
-  { name: 'Candidate Pipeline', path: '/pipeline', icon: '🛤️' },
-  { name: 'Interview Management', path: '/interviews', icon: '📅' },
-  { name: 'Offer Management', path: '/offers', icon: '✉️' },
-  { name: 'Joining Management', path: '/joining', icon: '🤝' },
-  { name: 'Task Management', path: '/tasks', icon: '📋' },
-  { name: 'CRM', path: '/crm', icon: '💼' },
-  { name: 'Reports & Analytics', path: '/reports', icon: '📈' },
-  { name: 'Notification', path: '/notifications', icon: '🔔' },
-  { name: 'Document Management', path: '/documents', icon: '📁' },
-  { name: 'Audit Logs', path: '/audit', icon: '🔍' },
-  { name: 'Settings', path: '/settings', icon: '🔧' },
-  { name: 'FAQs', path: '/faqs', icon: '❓' },
-  { name: 'System Configuration', path: '/config', icon: '🖥️' },
-];
-
-export default function Sidebar() {
+export function Sidebar({ menuItems = [] }) {
   return (
-    <div className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col overflow-hidden shadow-sm">
-      <div className="p-6 flex items-center gap-3 border-b border-gray-100">
-        <img src="/favicon.svg" alt="RecruitMatrix Logo" className="w-10 h-10" />
-        <div className="font-bold text-xl text-brand-dark tracking-tight">
-          Recruit<span className="text-brand-purple">Matrix</span>
-        </div>
+    <aside className="fixed inset-y-0 left-0 w-64 bg-[#0F172A] text-white flex flex-col transition-all duration-300 z-50">
+      {/* Logo Area */}
+      <div className="flex h-16 items-center px-6 border-b border-white/10">
+        <Briefcase className="w-8 h-8 text-[#4F46E5] mr-3" />
+        <span className="text-xl font-bold tracking-wide">RecruitMatrix</span>
       </div>
-      <div className="flex-1 overflow-y-auto py-4">
-        <ul className="space-y-1 px-3">
-          {modules.map((mod) => (
-            <li key={mod.name}>
-              <NavLink
-                to={mod.path}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    isActive 
-                      ? 'bg-brand-purple/10 text-brand-purple' 
-                      : 'text-brand-gray hover:bg-gray-50 hover:text-brand-dark'
-                  }`
-                }
-              >
-                <span className="text-lg">{mod.icon}</span>
-                {mod.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+
+      {/* Navigation */}
+      <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1 scrollbar-hide">
+        {menuItems.map((item, index) => {
+          if (item.type === 'divider') {
+            return (
+              <div key={index} className="py-2">
+                <div className="h-px bg-white/10 mx-3" />
+                {item.label && (
+                  <p className="px-3 pt-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                    {item.label}
+                  </p>
+                )}
+              </div>
+            );
+          }
+
+          const Icon = item.icon;
+          return (
+            <NavLink
+              key={index}
+              to={item.path}
+              className={({ isActive }) =>
+                cn(
+                  'flex items-center px-3 py-2.5 rounded-[12px] text-sm font-medium transition-colors group',
+                  isActive
+                    ? 'bg-[#4F46E5] text-white'
+                    : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                )
+              }
+            >
+              <Icon className="w-5 h-5 mr-3 flex-shrink-0" />
+              <span className="truncate">{item.label}</span>
+            </NavLink>
+          );
+        })}
+      </nav>
+    </aside>
   );
 }

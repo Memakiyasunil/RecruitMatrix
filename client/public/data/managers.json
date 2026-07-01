@@ -1,0 +1,162 @@
+[
+  {
+    "id": "MGR-0001",
+    "name": "Aarav Chatterjee",
+    "email": "aarav.chatterjee@recruitmatrix.com",
+    "role": "Manager",
+    "department": "IT Support",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0002",
+    "name": "Pooja Verma",
+    "email": "pooja.verma@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0003",
+    "name": "Advik Das",
+    "email": "advik.das@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0004",
+    "name": "Aarav Gupta",
+    "email": "aarav.gupta@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0005",
+    "name": "Advik Reddy",
+    "email": "advik.reddy@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0006",
+    "name": "Advik Reddy",
+    "email": "advik.reddy@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0007",
+    "name": "Nitin Jain",
+    "email": "nitin.jain@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0008",
+    "name": "Anaya Singh",
+    "email": "anaya.singh@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0009",
+    "name": "Raj Deshmukh",
+    "email": "raj.deshmukh@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Operations",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0010",
+    "name": "Kavita Jain",
+    "email": "kavita.jain@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0011",
+    "name": "Rakesh Singh",
+    "email": "rakesh.singh@recruitmatrix.com",
+    "role": "Manager",
+    "department": "HR",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0012",
+    "name": "Pooja Verma",
+    "email": "pooja.verma@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0013",
+    "name": "Kabir Shah",
+    "email": "kabir.shah@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Marketing",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0014",
+    "name": "Vivaan Nair",
+    "email": "vivaan.nair@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Engineering",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0015",
+    "name": "Karan Bose",
+    "email": "karan.bose@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Sales",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0016",
+    "name": "Vihaan Mehta",
+    "email": "vihaan.mehta@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0017",
+    "name": "Arjun Sharma",
+    "email": "arjun.sharma@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Finance",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0018",
+    "name": "Neha Reddy",
+    "email": "neha.reddy@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Product",
+    "status": "Active"
+  },
+  {
+    "id": "MGR-0019",
+    "name": "Ananya Trivedi",
+    "email": "ananya.trivedi@recruitmatrix.com",
+    "role": "Manager",
+    "department": "IT Support",
+    "status": "Inactive"
+  },
+  {
+    "id": "MGR-0020",
+    "name": "Advik Sen",
+    "email": "advik.sen@recruitmatrix.com",
+    "role": "Manager",
+    "department": "Engineering",
+    "status": "Active"
+  }
+]
