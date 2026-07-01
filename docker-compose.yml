@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # Backend Server
+  backend:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: recruitmatrix-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      # Provide the Firebase Service Account JSON as a string or mount it as a volume
+      # If using a .env file on the server, Docker Compose will pick it up if specified:
+    env_file:
+      - ./server/.env
+    networks:
+      - recruitmatrix-network
+
+  # Frontend Client
+  frontend:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: recruitmatrix-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    # Make sure to build the client with environment variables 
+    # VITE_FIREBASE_API_KEY, etc. baked in, or provide them via a .env file during build.
+    networks:
+      - recruitmatrix-network
+
+networks:
+  recruitmatrix-network:
+    driver: bridge
