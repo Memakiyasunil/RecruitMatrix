@@ -15,13 +15,37 @@ The project utilizes npm workspaces. From the root directory, run:
 - `npm run dev:website` - Starts Public Website
 - `npm run dev:server` - Starts Backend API
 
+## Running with Docker
+You can easily spin up the entire application using Docker Compose.
+
+1. Build and run all services (Server, Admin Panel, Company Panel, and Website):
+```bash
+docker compose up -d --build
+```
+
+- **Admin Panel**: `http://localhost:80`
+- **Company Panel**: `http://localhost:8081`
+- **Website**: `http://localhost:8082`
+- **Backend API**: `http://localhost:5000`
+
+2. Stop all services:
+```bash
+docker compose down
+```
+
 ## Seeding the Database
-To populate the database with initial users, roles, clients, and tasks, navigate to the `server` directory and run the seed script:
+To populate your Firebase Firestore database with initial users, roles, clients, and tasks, ensure that your `server/.env` contains your `FIREBASE_SERVICE_ACCOUNT` json string. 
+
+**Option 1: Using Docker (Recommended)**
+```bash
+docker compose run --rm seed
+```
+
+**Option 2: Using NPM (Local)**
 ```bash
 cd server
-node src/seed.js
+npm run seed
 ```
-*Note: Ensure your MongoDB instance is running locally or that `server/.env` is configured with your `MONGO_URI`.*
 
 ---
 
