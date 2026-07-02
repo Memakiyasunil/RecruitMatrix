@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-secondary: #0ea5e9;
+  --font-sans: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.hero-gradient { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); }
+.card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(99,102,241,0.15); }
+.gradient-text { background: linear-gradient(135deg, #6366f1, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }

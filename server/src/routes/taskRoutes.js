@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/taskController');
+const taskController = require('../controllers/taskController');
 
-router.get('/', controller.getAll);
-router.post('/', controller.create);
+router.get('/', taskController.getAllTasks);
+router.post('/', taskController.createTask);
+router.get('/:id', taskController.getTaskById);
+router.put('/:id/status', taskController.updateTaskStatus);
+router.post('/:id/comments', taskController.addComment);
 
 module.exports = router;

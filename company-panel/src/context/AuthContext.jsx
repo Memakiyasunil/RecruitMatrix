@@ -11,7 +11,6 @@ import {
 
 const AuthContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   return useContext(AuthContext);
 };
@@ -19,7 +18,6 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [otpEmail, setOtpEmail] = useState('');
 
   useEffect(() => {
     if (!auth) {
@@ -34,7 +32,7 @@ export const AuthProvider = ({ children }) => {
           name: user.displayName || user.email?.split('@')[0] || 'User',
           email: user.email,
           photoURL: user.photoURL,
-          role: 'Admin',
+          role: { name: 'Client Admin' },
         });
       } else {
         setCurrentUser(null);
@@ -45,17 +43,6 @@ export const AuthProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-  const loginWithGoogle = async () => {
-    if (!auth) return Promise.reject('Auth not initialized');
-    try {
-      const result = await signInWithPopup(auth, provider);
-      return result;
-    } catch (error) {
-      console.error('Google login error:', error);
-      throw error;
-    }
-  };
-
   const loginWithEmail = async (email, password) => {
     if (!auth) return Promise.reject('Auth not initialized');
     try {
@@ -63,20 +50,6 @@ export const AuthProvider = ({ children }) => {
       return result;
     } catch (error) {
       console.error('Email login error:', error);
-      throw error;
-    }
-  };
-
-  const signupWithEmail = async (email, password, name) => {
-    if (!auth) return Promise.reject('Auth not initialized');
-    try {
-      const result = await createUserWithEmailAndPassword(auth, email, password);
-      if (name) {
-        await updateProfile(result.user, { displayName: name });
-      }
-      return result;
-    } catch (error) {
-      console.error('Signup error:', error);
       throw error;
     }
   };
@@ -92,11 +65,7 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     currentUser,
-    otpEmail,
-    setOtpEmail,
-    loginWithGoogle,
     loginWithEmail,
-    signupWithEmail,
     logout,
   };
 

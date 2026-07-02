@@ -108,7 +108,7 @@ function LoginTab({ onSuccess }) {
       await loginWithEmail(email, password);
       navigate('/admin/dashboard');
     } catch (err) {
-      setError(getFriendlyError(err.code));
+      setError(err.message || 'Login failed');
     } finally { setLoading(false); }
   };
 
@@ -212,7 +212,7 @@ function SignUpTab() {
       setOtpEmail(email);
       navigate('/verify-otp');
     } catch (err) {
-      setError(getFriendlyError(err.code));
+      setError(err.message || 'Signup failed');
     } finally { setLoading(false); }
   };
 

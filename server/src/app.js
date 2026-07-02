@@ -16,6 +16,8 @@ const reportRoutes = require('./routes/reportRoutes');
 const auditRoutes = require('./routes/auditRoutes');
 const settingRoutes = require('./routes/settingRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const authRoutes = require('./routes/authRoutes');
+const companyEmployeeRoutes = require('./routes/companyEmployeeRoutes');
 
 const app = express();
 
@@ -23,6 +25,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/company/employees', companyEmployeeRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/clients', clientRoutes);

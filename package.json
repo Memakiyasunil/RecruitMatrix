@@ -1,5 +1,16 @@
 {
-  "dependencies": {
-    "firebase": "^12.15.0"
+  "name": "recruit-matrix",
+  "private": true,
+  "workspaces": [
+    "admin-panel",
+    "company-panel",
+    "website",
+    "server"
+  ],
+  "scripts": {
+    "dev:admin": "npm run dev --workspace=admin-panel",
+    "dev:company": "npm run dev --workspace=company-panel",
+    "dev:website": "npm run dev --workspace=website",
+    "dev:server": "npm run dev --workspace=server"
   }
 }

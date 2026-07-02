@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { useAuth } from '../context/AuthContext';
 import {
-  LayoutDashboard, Users, Briefcase, Calendar, Building2,
-  FileText, FileSearch, UserCog, FolderTree, Settings,
-  ChevronLeft, ChevronRight, Crown, LogOut
+  LayoutDashboard, Briefcase, FileSignature, Share2, 
+  Users, Tags, Filter, UserCheck, Calendar, Trophy,
+  Mail, ThumbsUp, UserPlus, Building2, FolderOpen,
+  ClipboardList, Clock, BarChart3, ShieldCheck,
+  FolderTree, TagsIcon, Settings, ScrollText,
+  ChevronLeft, ChevronRight, LogOut, ChevronDown, ChevronUp
 } from 'lucide-react';
 
 /* ─── RM Logo mark ─────────────────────────────────────────── */
@@ -37,21 +40,46 @@ function RMLogoMark({ size = 32 }) {
 }
 
 /* ─── Nav groups ──────────────────────────────────────────── */
-const MAIN_NAV = [
-  { label: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Candidates', path: '/admin/candidates', icon: Users },
-  { label: 'Jobs', path: '/admin/jobs', icon: Briefcase },
-  { label: 'Interviews', path: '/admin/interviews', icon: Calendar },
-  { label: 'Companies', path: '/admin/clients', icon: Building2 },
-  { label: 'Applications', path: '/admin/applications', icon: FileText },
-  { label: 'Resumes', path: '/admin/resumes', icon: FileSearch },
-];
-
-const MGMT_NAV = [
-  { label: 'Users', path: '/admin/users', icon: Users },
-  { label: 'Roles & Permissions', path: '/admin/roles', icon: UserCog },
-  { label: 'Departments', path: '/admin/departments', icon: FolderTree },
-  { label: 'Settings', path: '/admin/settings', icon: Settings },
+const MENU_GROUPS = [
+  {
+    title: 'Core Recruitment',
+    items: [
+      { label: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
+      { label: 'Talent Requisition', path: '/admin/requisitions', icon: Briefcase },
+      { label: 'TR Approval', path: '/admin/approvals', icon: FileSignature },
+      { label: 'TR Allocation', path: '/admin/allocations', icon: Share2 },
+      { label: 'Candidate Master', path: '/admin/candidates', icon: Users },
+      { label: 'Tagging', path: '/admin/tagging', icon: Tags },
+      { label: 'Screening', path: '/admin/screening', icon: Filter },
+      { label: 'Shortlisting', path: '/admin/shortlisting', icon: UserCheck },
+      { label: 'Interviews', path: '/admin/interviews', icon: Calendar },
+      { label: 'Candidate Selection', path: '/admin/selection', icon: Trophy },
+      { label: 'Offer Letter', path: '/admin/offers', icon: Mail },
+      { label: 'Offer Acceptance', path: '/admin/offer-acceptance', icon: ThumbsUp },
+      { label: 'Joining & Onboarding', path: '/admin/joining', icon: UserPlus },
+    ]
+  },
+  {
+    title: 'Operations',
+    items: [
+      { label: 'Client Management', path: '/admin/clients', icon: Building2 },
+      { label: 'Documents', path: '/admin/documents', icon: FolderOpen },
+      { label: 'Task Management', path: '/admin/tasks', icon: ClipboardList },
+      { label: 'Attendance', path: '/admin/attendance', icon: Clock },
+      { label: 'Reports & Analytics', path: '/admin/reports', icon: BarChart3 },
+    ]
+  },
+  {
+    title: 'System & Admin',
+    items: [
+      { label: 'User Management', path: '/admin/users', icon: ShieldCheck },
+      { label: 'Role & Permissions', path: '/admin/roles', icon: ShieldCheck }, // TODO find better icon in lucide
+      { label: 'Department Master', path: '/admin/departments', icon: FolderTree },
+      { label: 'Designation Master', path: '/admin/designations', icon: TagsIcon },
+      { label: 'Audit Logs', path: '/admin/audit', icon: ScrollText },
+      { label: 'System Settings', path: '/admin/settings', icon: Settings },
+    ]
+  }
 ];
 
 /* ─── Single nav item ─────────────────────────────────────── */
@@ -89,10 +117,9 @@ function NavItem({ item, collapsed }) {
 }
 
 /* ─── Main Sidebar ────────────────────────────────────────── */
-export function Sidebar({ menuItems = [] }) {
+export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const { currentUser, logout } = useAuth();
-
   const w = collapsed ? 'w-18' : 'w-64';
 
   return (
@@ -100,7 +127,7 @@ export function Sidebar({ menuItems = [] }) {
       style={{ background: '#0f172a', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
 
       {/* ── Logo area ── */}
-      <div className={cn('flex items-center h-16 px-4 border-b flex-shrink-0', collapsed ? 'justify-center' : 'gap-3')}
+      <div className={cn('flex items-center h-16 px-4 border-b flex-shrink-0 bg-slate-900/50', collapsed ? 'justify-center' : 'gap-3')}
         style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
         <RMLogoMark size={36} />
         {!collapsed && (
@@ -108,7 +135,7 @@ export function Sidebar({ menuItems = [] }) {
             <div className="text-white font-bold text-base leading-none">
               Recruit<span className="text-indigo-400">Matrix</span>
             </div>
-            <div className="text-gray-500 text-xs mt-0.5">Right Talent. Right Future.</div>
+            <div className="text-gray-500 text-[10px] uppercase tracking-wider mt-1 font-semibold">Admin Portal</div>
           </div>
         )}
       </div>
@@ -124,44 +151,22 @@ export function Sidebar({ menuItems = [] }) {
       </button>
 
       {/* ── Navigation ── */}
-      <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1 scrollbar-hide">
-        {/* MAIN section */}
-        {!collapsed && (
-          <p className="px-3 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Main</p>
-        )}
-        {MAIN_NAV.map(item => <NavItem key={item.path} item={item} collapsed={collapsed} />)}
-
-        {/* MANAGEMENT section */}
-        <div className="pt-3">
-          {!collapsed && (
-            <p className="px-3 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Management</p>
-          )}
-          {!collapsed && <div className="h-px bg-white/5 mb-2" />}
-          {MGMT_NAV.map(item => <NavItem key={item.path} item={item} collapsed={collapsed} />)}
-        </div>
+      <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-4 scrollbar-hide">
+        {MENU_GROUPS.map((group, idx) => (
+          <div key={idx}>
+            {!collapsed && (
+              <p className="px-3 py-1 text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-1">{group.title}</p>
+            )}
+            <div className="space-y-0.5">
+              {group.items.map(item => <NavItem key={item.path} item={item} collapsed={collapsed} />)}
+            </div>
+          </div>
+        ))}
       </nav>
 
-      {/* ── Upgrade to Pro card ── */}
-      {/* {!collapsed && (
-        <div className="mx-3 mb-3 rounded-2xl p-4 upgrade-card">
-          <div className="flex items-center gap-2 mb-2">
-            <Crown size={16} className="text-yellow-300"/>
-            <span className="text-sm font-bold text-white">Upgrade to Pro</span>
-          </div>
-          <p className="text-xs text-indigo-200 mb-3 leading-relaxed">
-            Unlock advanced features and analytics.
-          </p>
-          <button id="upgrade-pro-btn"
-                  className="w-full py-2 rounded-xl text-xs font-bold text-indigo-900 bg-white hover:bg-gray-50 transition-colors shadow-md">
-            Upgrade Now
-          </button>
-        </div>
-      )} */}
-
       {/* ── User footer ── */}
-      <div className={cn('flex-shrink-0 border-t p-3', collapsed ? 'flex justify-center' : 'flex items-center gap-3')}
+      <div className={cn('flex-shrink-0 border-t p-3 bg-slate-900/50', collapsed ? 'flex justify-center' : 'flex items-center gap-3')}
         style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-        {/* Avatar */}
         <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 relative"
           style={{ background: 'linear-gradient(135deg,#4f46e5,#7c3aed)' }}>
           {currentUser?.name ? currentUser.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() : 'AU'}
@@ -171,7 +176,7 @@ export function Sidebar({ menuItems = [] }) {
           <>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-semibold text-white truncate">{currentUser?.name || 'Admin User'}</p>
-              <p className="text-xs text-gray-500 truncate">{currentUser?.email || 'admin@recruitmatrix.com'}</p>
+              <p className="text-[10px] text-gray-500 truncate">{currentUser?.email || 'admin@recruitmatrix.com'}</p>
             </div>
             <button onClick={() => logout()} title="Sign out" id="sidebar-logout-btn"
               className="p-1.5 text-gray-500 hover:text-red-400 rounded-lg hover:bg-white/5 transition-colors flex-shrink-0">
