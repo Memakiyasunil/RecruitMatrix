@@ -65,3 +65,20 @@ Once you have run the seed script, you can log in using the following accounts:
 | **Technical Manager** | Charlie TechMgr | `charlie.tech@acmecorp.com` | `Company@123` |
 | **Senior Developer** | Dave SrDev | `dave.srdev@acmecorp.com` | `Company@123` |
 | **Junior Developer** | Eve JrDev | `eve.jrdev@acmecorp.com` | `Company@123` |
+
+
+
+
+1. Admin Panel
+URL: http://51.20.120.85 (Uses default Port 80)
+
+Email: admin@recruitmatrix.com
+Password: Admin@123
+2. Company Panel
+URL: http://51.20.120.85:8081
+
+Email: alice.ceo@acmecorp.com (CEO)
+Email: charlie.tech@acmecorp.com (Tech Manager)
+Password: Company@123
+3. Public Candidate Website
+URL: http://51.20.120.85:8082
