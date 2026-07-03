@@ -18,6 +18,7 @@ const settingRoutes = require('./routes/settingRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const authRoutes = require('./routes/authRoutes');
 const companyEmployeeRoutes = require('./routes/companyEmployeeRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
 
 const app = express();
 
@@ -43,6 +44,9 @@ app.use('/api/v1/tasks', taskRoutes);
 app.use('/api/v1/reports', reportRoutes);
 app.use('/api/v1/audits', auditRoutes);
 app.use('/api/v1/settings', settingRoutes);
+
+// New hiring workflow routes
+app.use('/api/v1', applicationRoutes);
 
 // Base route
 app.get('/', (req, res) => {

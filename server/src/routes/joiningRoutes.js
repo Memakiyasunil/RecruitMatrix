@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/joiningController');
+const ctrl = require('../controllers/joiningController');
 
-router.get('/', controller.getAll);
-router.post('/', controller.create);
+router.post('/', ctrl.createJoining);
+router.get('/', ctrl.getJoinings);
+router.get('/:id', ctrl.getJoiningById);
+router.patch('/:id', ctrl.updateJoining);
 
 module.exports = router;

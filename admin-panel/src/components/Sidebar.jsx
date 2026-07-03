@@ -42,26 +42,32 @@ function RMLogoMark({ size = 32 }) {
 /* ─── Nav groups ──────────────────────────────────────────── */
 const MENU_GROUPS = [
   {
-    title: 'Core Recruitment',
+    title: 'Website & Applications',
     items: [
       { label: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
-      { label: 'Talent Requisition', path: '/admin/requisitions', icon: Briefcase },
-      { label: 'TR Approval', path: '/admin/approvals', icon: FileSignature },
-      { label: 'TR Allocation', path: '/admin/allocations', icon: Share2 },
-      { label: 'Candidate Master', path: '/admin/candidates', icon: Users },
+      { label: 'Applications Inbox', path: '/admin/applications', icon: Users },
+      { label: 'Job Openings', path: '/admin/requisitions', icon: Briefcase },
+    ]
+  },
+  {
+    title: 'Hiring Workflow',
+    items: [
+      { label: 'Candidate Pipeline', path: '/admin/candidates', icon: Users },
       { label: 'Tagging', path: '/admin/tagging', icon: Tags },
       { label: 'Screening', path: '/admin/screening', icon: Filter },
       { label: 'Shortlisting', path: '/admin/shortlisting', icon: UserCheck },
       { label: 'Interviews', path: '/admin/interviews', icon: Calendar },
-      { label: 'Candidate Selection', path: '/admin/selection', icon: Trophy },
-      { label: 'Offer Letter', path: '/admin/offers', icon: Mail },
-      { label: 'Offer Acceptance', path: '/admin/offer-acceptance', icon: ThumbsUp },
-      { label: 'Joining & Onboarding', path: '/admin/joining', icon: UserPlus },
+      { label: 'Selection', path: '/admin/selection', icon: Trophy },
+      { label: 'Joining Tracker', path: '/admin/joining', icon: UserPlus },
     ]
   },
   {
     title: 'Operations',
     items: [
+      { label: 'TR Approval', path: '/admin/approvals', icon: FileSignature },
+      { label: 'TR Allocation', path: '/admin/allocations', icon: Share2 },
+      { label: 'Offer Letters', path: '/admin/offers', icon: Mail },
+      { label: 'Offer Acceptance', path: '/admin/offer-acceptance', icon: ThumbsUp },
       { label: 'Client Management', path: '/admin/clients', icon: Building2 },
       { label: 'Documents', path: '/admin/documents', icon: FolderOpen },
       { label: 'Task Management', path: '/admin/tasks', icon: ClipboardList },
@@ -73,7 +79,7 @@ const MENU_GROUPS = [
     title: 'System & Admin',
     items: [
       { label: 'User Management', path: '/admin/users', icon: ShieldCheck },
-      { label: 'Role & Permissions', path: '/admin/roles', icon: ShieldCheck }, // TODO find better icon in lucide
+      { label: 'Role & Permissions', path: '/admin/roles', icon: ShieldCheck },
       { label: 'Department Master', path: '/admin/departments', icon: FolderTree },
       { label: 'Designation Master', path: '/admin/designations', icon: TagsIcon },
       { label: 'Audit Logs', path: '/admin/audit', icon: ScrollText },

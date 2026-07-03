@@ -14,11 +14,19 @@ import SettingsPage from './pages/SettingsPage';
 // Stub pages for all new modules
 import {
   RequisitionsPage, ApprovalsPage, AllocationsPage, CandidatesPage,
-  TaggingPage, ScreeningPage, ShortlistingPage, InterviewsPage,
-  SelectionPage, OffersPage, OfferAcceptancePage, JoiningPage,
+  TaggingPage, ScreeningPage, ShortlistingPage,
+  OffersPage, OfferAcceptancePage,
   DocumentsPage, TasksPage, AttendancePage, ReportsPage,
   RolesPage, DepartmentsPage, DesignationsPage, AuditPage
 } from './pages/StubPages';
+
+// Full hiring workflow pages
+import {
+  ApplicationsInboxPage,
+  FullInterviewsPage,
+  FullSelectionPage,
+  FullJoiningPage
+} from './pages/HiringWorkflowPages';
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
@@ -57,11 +65,12 @@ function AppRoutes() {
         <Route path="tagging" element={<TaggingPage />} />
         <Route path="screening" element={<ScreeningPage />} />
         <Route path="shortlisting" element={<ShortlistingPage />} />
-        <Route path="interviews" element={<InterviewsPage />} />
-        <Route path="selection" element={<SelectionPage />} />
+        <Route path="applications" element={<ApplicationsInboxPage />} />
+        <Route path="interviews" element={<FullInterviewsPage />} />
+        <Route path="selection" element={<FullSelectionPage />} />
+        <Route path="joining" element={<FullJoiningPage />} />
         <Route path="offers" element={<OffersPage />} />
         <Route path="offer-acceptance" element={<OfferAcceptancePage />} />
-        <Route path="joining" element={<JoiningPage />} />
 
         {/* Operations */}
         <Route path="clients" element={<ClientPage />} />
