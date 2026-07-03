@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { label: 'Offer Status',             path: '/offers',              icon: Package },
   { label: 'Joined Candidates',        path: '/joinings',            icon: Users },
   { label: 'Employee Management',      path: '/employees',           icon: UserPlus },
+  { label: 'Attendance',               path: '/attendance',          icon: Users },
   { label: 'Task Management',          path: '/tasks',               icon: ClipboardList },
   { label: 'Reports',                  path: '/reports',             icon: FolderOpen },
   { label: 'Documents',               path: '/documents',            icon: FileText },

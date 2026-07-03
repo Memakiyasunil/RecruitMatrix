@@ -14,15 +14,42 @@ const importData = async () => {
     // so we'll just write predefined documents with known IDs for the seed.
 
     // 1. Create Client (Company)
-    const clientRef = db.collection('clients').doc('client_acme');
-    await clientRef.set({
-      companyName: 'Acme Corp',
-      industry: 'Technology',
-      website: 'www.acmecorp.com',
+    const clientRef1 = db.collection('clients').doc('CLT-0001');
+    await clientRef1.set({
+      clientName: 'Tata Consultancy Services',
+      businessName: 'TCS',
+      businessDomain: 'IT Services',
+      address: 'Banyan Park, Mumbai, Maharashtra',
+      logo: '',
+      website: 'https://www.tcs.com',
+      email: 'contact@tcs.com',
+      mobile: '9876543210',
+      gstNumber: '27AAACT4355B1Z1',
+      panNumber: 'AAACT4355B',
+      briefDescription: 'Global leader in IT services, consulting, and business solutions.',
+      clientAbbreviation: 'TCS',
+      interviewAddress: 'Banyan Park, Andheri East, Mumbai',
       status: 'Active',
-      contactPerson: 'Jane Doe',
-      email: 'jane@acmecorp.com',
-      phone: '123-456-7890'
+      createdAt: new Date().toISOString()
+    });
+
+    const clientRef2 = db.collection('clients').doc('CLT-0002');
+    await clientRef2.set({
+      clientName: 'Infosys Limited',
+      businessName: 'Infosys',
+      businessDomain: 'IT Consulting',
+      address: 'Electronic City, Bangalore, Karnataka',
+      logo: '',
+      website: 'https://www.infosys.com',
+      email: 'contact@infosys.com',
+      mobile: '9876543211',
+      gstNumber: '29AAACI4355B1Z1',
+      panNumber: 'AAACI4355B',
+      briefDescription: 'Next-generation digital services and consulting.',
+      clientAbbreviation: 'INFY',
+      interviewAddress: 'Electronic City Phase 1, Bangalore',
+      status: 'Active',
+      createdAt: new Date().toISOString()
     });
 
     // 2. Create Company Roles

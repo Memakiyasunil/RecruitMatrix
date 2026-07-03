@@ -5,15 +5,11 @@ import './index.css';
 import CompanyLayout from './components/Layout';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
-import CreateRequisitionPage from './pages/CreateRequisitionPage';
-import MyRequisitionsPage from './pages/MyRequisitionsPage';
-import ShortlistReviewPage from './pages/ShortlistReviewPage';
-import ReportsPage from './pages/ReportsPage';
 import DocumentsPage from './pages/DocumentsPage';
 import NotificationsPage from './pages/NotificationsPage';
-import ProfilePage from './pages/ProfilePage';
-import EmployeeManagementPage from './pages/EmployeeManagementPage';
-import TaskManagementPage from './pages/TaskManagementPage';
+import MyRequisitionsPage from './pages/MyRequisitionsPage';
+
+// Full hiring workflow
 import {
   FullCandidateProgressPage,
   FullCompanyInterviewPage,
@@ -23,13 +19,22 @@ import {
   FullJoinedCandidatesPage
 } from './pages/CompanyHiringPages';
 
+// Full operations pages
+import {
+  FullEmployeeManagementPage,
+  FullAttendancePage,
+  FullTaskManagementPage,
+  FullShortlistReviewPage,
+  FullCreateRequisitionPage,
+  FullReportsPage,
+  FullProfilePage
+} from './pages/CompanyOperationsPages';
+
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useAuth();
-  if (!currentUser) {
-    return <Navigate to="/login" replace />;
-  }
+  if (!currentUser) return <Navigate to="/login" replace />;
   return children;
 };
 
@@ -45,21 +50,28 @@ export default function App() {
           <Route path="/" element={<ProtectedRoute><CompanyLayout /></ProtectedRoute>}>
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
+
+            {/* Talent Requisition */}
             <Route path="requisitions" element={<MyRequisitionsPage />} />
-            <Route path="requisitions/create" element={<CreateRequisitionPage />} />
+            <Route path="requisitions/create" element={<FullCreateRequisitionPage />} />
+
+            {/* Hiring Workflow */}
             <Route path="candidates/progress" element={<FullCandidateProgressPage />} />
-            <Route path="candidates/shortlist" element={<ShortlistReviewPage />} />
+            <Route path="candidates/shortlist" element={<FullShortlistReviewPage />} />
             <Route path="interviews" element={<FullCompanyInterviewPage />} />
             <Route path="selected" element={<FullSelectedCandidatesPage />} />
             <Route path="rejected" element={<FullRejectedCandidatesPage />} />
             <Route path="offers" element={<FullOfferStatusPage />} />
             <Route path="joinings" element={<FullJoinedCandidatesPage />} />
-            <Route path="reports" element={<ReportsPage />} />
+
+            {/* Operations */}
+            <Route path="employees" element={<FullEmployeeManagementPage />} />
+            <Route path="attendance" element={<FullAttendancePage />} />
+            <Route path="tasks" element={<FullTaskManagementPage />} />
+            <Route path="reports" element={<FullReportsPage />} />
             <Route path="documents" element={<DocumentsPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
-            <Route path="profile" element={<ProfilePage />} />
-            <Route path="employees" element={<EmployeeManagementPage />} />
-            <Route path="tasks" element={<TaskManagementPage />} />
+            <Route path="profile" element={<FullProfilePage />} />
           </Route>
 
           {/* Catch all */}
