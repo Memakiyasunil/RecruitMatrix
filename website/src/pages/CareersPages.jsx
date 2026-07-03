@@ -471,8 +471,10 @@ export function ApplyPage() {
     if (step === 0) {
       if (!form.firstName.trim()) errs.firstName = 'Required';
       if (!form.lastName.trim()) errs.lastName = 'Required';
-      if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) errs.email = 'Valid email required';
+      if (!form.email.trim()) errs.email = 'Required';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = 'Valid email required';
       if (!form.mobile.trim()) errs.mobile = 'Required';
+      else if (!/^\+?[\d\s-]{10,}$/.test(form.mobile)) errs.mobile = 'Valid mobile required';
       if (!form.currentLocation.trim()) errs.currentLocation = 'Required';
     }
     if (step === 1) {
@@ -480,6 +482,10 @@ export function ApplyPage() {
       if (!form.noticePeriod) errs.noticePeriod = 'Required';
       if (!form.skills.trim()) errs.skills = 'Required';
       if (!form.highestQualification.trim()) errs.highestQualification = 'Required';
+      
+      const urlRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+      if (form.linkedinUrl && !urlRegex.test(form.linkedinUrl)) errs.linkedinUrl = 'Invalid URL format';
+      if (form.portfolioUrl && !urlRegex.test(form.portfolioUrl)) errs.portfolioUrl = 'Invalid URL format';
     }
     if (step === 3) {
       if (!form.resumeUrl && !form.resumeFile) errs.resume = 'Resume is required';
@@ -571,8 +577,8 @@ export function ApplyPage() {
           </div>
           <div className="md:col-span-2"><label className="label">Skills * (comma-separated)</label><input value={form.skills} onChange={e => set('skills', e.target.value)} className={inputClass('skills')} placeholder="React, Node.js, Firebase, TypeScript" />{errors.skills && <p className="err">{errors.skills}</p>}</div>
           <div><label className="label">Certifications</label><input value={form.certifications} onChange={e => set('certifications', e.target.value)} className={inputClass('certifications')} placeholder="AWS, Google Cloud, etc." /></div>
-          <div><label className="label">LinkedIn URL</label><input value={form.linkedinUrl} onChange={e => set('linkedinUrl', e.target.value)} className={inputClass('linkedinUrl')} placeholder="https://linkedin.com/in/..." /></div>
-          <div><label className="label">Portfolio / GitHub URL</label><input value={form.portfolioUrl} onChange={e => set('portfolioUrl', e.target.value)} className={inputClass('portfolioUrl')} placeholder="https://github.com/..." /></div>
+          <div><label className="label">LinkedIn URL</label><input value={form.linkedinUrl} onChange={e => set('linkedinUrl', e.target.value)} className={inputClass('linkedinUrl')} placeholder="https://linkedin.com/in/..." />{errors.linkedinUrl && <p className="err text-xs text-red-500 mt-1">{errors.linkedinUrl}</p>}</div>
+          <div><label className="label">Portfolio / GitHub URL</label><input value={form.portfolioUrl} onChange={e => set('portfolioUrl', e.target.value)} className={inputClass('portfolioUrl')} placeholder="https://github.com/..." />{errors.portfolioUrl && <p className="err text-xs text-red-500 mt-1">{errors.portfolioUrl}</p>}</div>
         </div>
       );
       case 2: return (

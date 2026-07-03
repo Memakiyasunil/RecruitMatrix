@@ -20,6 +20,7 @@ export default function UsersPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingUser, setEditingUser] = useState(null);
   const [formData, setFormData] = useState({ name: '', email: '', role: 'Recruiter', department: '', status: 'Active' });
+  const [errors, setErrors] = useState({});
 
   // Filtering
   const filteredUsers = users.filter(u => 
@@ -30,12 +31,14 @@ export default function UsersPage() {
   const openAddModal = () => {
     setEditingUser(null);
     setFormData({ name: '', email: '', role: 'Recruiter', department: '', status: 'Active' });
+    setErrors({});
     setIsModalOpen(true);
   };
 
   const openEditModal = (user) => {
     setEditingUser(user);
     setFormData({ ...user });
+    setErrors({});
     setIsModalOpen(true);
   };
 
@@ -45,8 +48,19 @@ export default function UsersPage() {
     }
   };
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name?.trim()) newErrors.name = 'Required';
+    if (!formData.email?.trim()) newErrors.email = 'Required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
+    
     if (editingUser) {
       // Update
       setUsers(users.map(u => u.id === editingUser.id ? { ...formData, id: u.id } : u));
@@ -156,23 +170,27 @@ export default function UsersPage() {
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
             <Input 
               required
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               placeholder="John Doe"
+              className={errors.name ? 'border-red-500' : ''}
             />
+            {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
             <Input 
               required
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               placeholder="john@example.com"
+              className={errors.email ? 'border-red-500' : ''}
             />
+            {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
           </div>
           
           <div className="grid grid-cols-2 gap-4">

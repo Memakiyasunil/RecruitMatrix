@@ -14,6 +14,8 @@ export default function CompanyLoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!email || !password) { setError('Please fill in all fields.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('Please enter a valid email address.'); return; }
     setLoading(true);
     setError('');
     try {

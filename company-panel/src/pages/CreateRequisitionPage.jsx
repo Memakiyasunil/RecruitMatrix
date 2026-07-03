@@ -25,19 +25,41 @@ const Textarea = (props) => (
 
 export default function CreateRequisitionPage() {
   const [accommodation, setAccommodation] = useState(false);
+  const [formData, setFormData] = useState({
+    positionName: '', department: '', vacancies: 1, description: ''
+  });
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.positionName.trim()) newErrors.positionName = 'Required';
+    if (!formData.department.trim()) newErrors.department = 'Required';
+    if (formData.vacancies < 1) newErrors.vacancies = 'Must be > 0';
+    if (!formData.description.trim()) newErrors.description = 'Required';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert('Requisition submitted successfully!');
+    }
+  };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Create Talent Requisition</h1>
           <p className="text-sm text-slate-400 mt-1">Fill in all required details for the position</p>
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors">
+          <button type="button" className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors">
             <Save size={15} /> Save Draft
           </button>
-          <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-white hover:opacity-90 transition-all"
+          <button type="submit" className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-white hover:opacity-90 transition-all"
             style={{ background: 'linear-gradient(135deg,#0ea5e9,#6366f1)' }}>
             <Send size={15} /> Submit Requisition
           </button>
@@ -48,10 +70,19 @@ export default function CreateRequisitionPage() {
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
         <h2 className="font-semibold text-slate-700 mb-4 pb-3 border-b border-slate-100">Basic Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Field label="Position Name" required><Input type="text" placeholder="e.g. Senior Developer" /></Field>
+          <Field label="Position Name" required>
+            <Input type="text" placeholder="e.g. Senior Developer" value={formData.positionName} onChange={e => setFormData({...formData, positionName: e.target.value})} className={errors.positionName ? 'border-red-500 w-full px-3 py-2.5 rounded-xl text-sm' : 'w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 bg-white transition-all'} />
+            {errors.positionName && <p className="text-xs text-red-500 mt-1">{errors.positionName}</p>}
+          </Field>
           <Field label="Position Code"><Input type="text" placeholder="e.g. POS-001" /></Field>
-          <Field label="Business / Department" required><Input type="text" placeholder="Department name" /></Field>
-          <Field label="No. of Vacancies" required><Input type="number" min={1} defaultValue={1} /></Field>
+          <Field label="Business / Department" required>
+            <Input type="text" placeholder="Department name" value={formData.department} onChange={e => setFormData({...formData, department: e.target.value})} className={errors.department ? 'border-red-500 w-full px-3 py-2.5 rounded-xl text-sm' : 'w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 bg-white transition-all'} />
+            {errors.department && <p className="text-xs text-red-500 mt-1">{errors.department}</p>}
+          </Field>
+          <Field label="No. of Vacancies" required>
+            <Input type="number" min={1} value={formData.vacancies} onChange={e => setFormData({...formData, vacancies: e.target.value})} className={errors.vacancies ? 'border-red-500 w-full px-3 py-2.5 rounded-xl text-sm' : 'w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 bg-white transition-all'} />
+            {errors.vacancies && <p className="text-xs text-red-500 mt-1">{errors.vacancies}</p>}
+          </Field>
           <Field label="Priority">
             <Select>
               <option value="low">Low</option><option value="medium">Medium</option>
@@ -75,7 +106,10 @@ export default function CreateRequisitionPage() {
           </Field>
         </div>
         <div className="mt-4">
-          <Field label="Position Details / JD"><Textarea placeholder="Describe the role, responsibilities, and expectations..." /></Field>
+          <Field label="Position Details / JD" required>
+            <Textarea placeholder="Describe the role, responsibilities, and expectations..." value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className={errors.description ? 'border-red-500 w-full px-3 py-2.5 rounded-xl text-sm resize-none' : 'w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 bg-white transition-all resize-none'} />
+            {errors.description && <p className="text-xs text-red-500 mt-1">{errors.description}</p>}
+          </Field>
         </div>
       </div>
 
@@ -145,6 +179,6 @@ export default function CreateRequisitionPage() {
           )}
         </div>
       </div>
-    </div>
+    </form>
   );
 }

@@ -3,6 +3,38 @@ import { Send, MapPin, Mail, Phone } from 'lucide-react';
 
 // Section 25.10 & 26.1
 export function ContactPage() {
+  const [form, setForm] = useState({ name: '', company: '', email: '', mobile: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('');
+
+  const validate = () => {
+    const newErrors = {};
+    if (!form.name.trim()) newErrors.name = 'Name is required';
+    if (!form.email.trim()) newErrors.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = 'Invalid email format';
+    if (!form.mobile.trim()) newErrors.mobile = 'Mobile is required';
+    else if (!/^\+?[\d\s-]{10,}$/.test(form.mobile)) newErrors.mobile = 'Invalid mobile number';
+    if (!form.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!form.message.trim()) newErrors.message = 'Message is required';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      setStatus('Sending...');
+      setTimeout(() => {
+        setStatus('Message sent successfully!');
+        setForm({ name: '', company: '', email: '', mobile: '', subject: '', message: '' });
+        setTimeout(() => setStatus(''), 3000);
+      }, 1000);
+    }
+  };
+
+  const inputClass = (field) => `w-full px-4 py-3 rounded-xl border ${errors[field] ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-slate-200 focus:border-indigo-400 focus:ring-indigo-200'} text-sm focus:outline-none focus:ring-2 transition-all`;
+
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50">
       <div className="max-w-6xl mx-auto px-6">
@@ -13,23 +45,43 @@ export function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
             <h2 className="font-bold text-slate-800 mb-6">Send us a Message</h2>
-            <form className="space-y-4">
-              {[['Name','text','Your full name'],['Company Name','text','Your company'],['Email','email','your@email.com'],['Mobile','tel','+91 99999 99999']].map(([label, type, placeholder]) => (
-                <div key={label}>
-                  <label className="block text-xs font-semibold text-slate-600 mb-1.5">{label}</label>
-                  <input type={type} placeholder={placeholder} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 transition-all" />
+            {status && <div className={`mb-4 px-4 py-3 rounded-lg text-sm font-medium ${status.includes('successfully') ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-indigo-50 text-indigo-700'}`}>{status}</div>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 mb-1.5">Name *</label>
+                  <input type="text" placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name: e.target.value})} className={inputClass('name')} />
+                  {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
                 </div>
-              ))}
-              <div>
-                <label className="block text-xs font-semibold text-slate-600 mb-1.5">Subject</label>
-                <input type="text" placeholder="How can we help?" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-all" />
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 mb-1.5">Company Name</label>
+                  <input type="text" placeholder="Your company" value={form.company} onChange={e => setForm({...form, company: e.target.value})} className={inputClass('company')} />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 mb-1.5">Email *</label>
+                  <input type="email" placeholder="your@email.com" value={form.email} onChange={e => setForm({...form, email: e.target.value})} className={inputClass('email')} />
+                  {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 mb-1.5">Mobile *</label>
+                  <input type="tel" placeholder="+91 99999 99999" value={form.mobile} onChange={e => setForm({...form, mobile: e.target.value})} className={inputClass('mobile')} />
+                  {errors.mobile && <p className="text-xs text-red-500 mt-1">{errors.mobile}</p>}
+                </div>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-600 mb-1.5">Message</label>
-                <textarea rows={4} placeholder="Tell us more about your requirements..." className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-all resize-none" />
+                <label className="block text-xs font-semibold text-slate-600 mb-1.5">Subject *</label>
+                <input type="text" placeholder="How can we help?" value={form.subject} onChange={e => setForm({...form, subject: e.target.value})} className={inputClass('subject')} />
+                {errors.subject && <p className="text-xs text-red-500 mt-1">{errors.subject}</p>}
               </div>
-              <button type="submit" className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-all" style={{ background:'linear-gradient(135deg,#6366f1,#0ea5e9)' }}>
-                <Send size={15} /> Submit Inquiry
+              <div>
+                <label className="block text-xs font-semibold text-slate-600 mb-1.5">Message *</label>
+                <textarea rows={4} placeholder="Tell us more about your requirements..." value={form.message} onChange={e => setForm({...form, message: e.target.value})} className={`${inputClass('message')} resize-none`} />
+                {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
+              </div>
+              <button type="submit" disabled={status === 'Sending...'} className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-all disabled:opacity-70" style={{ background:'linear-gradient(135deg,#6366f1,#0ea5e9)' }}>
+                <Send size={15} /> {status === 'Sending...' ? 'Sending...' : 'Submit Inquiry'}
               </button>
             </form>
           </div>

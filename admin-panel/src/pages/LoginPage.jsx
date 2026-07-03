@@ -103,6 +103,7 @@ function LoginTab({ onSuccess }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!email || !password) { setError('Please fill in all fields.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('Please enter a valid email address.'); return; }
     setLoading(true); setError('');
     try {
       await loginWithEmail(email, password);
@@ -204,6 +205,8 @@ function SignUpTab() {
   const handleSignup = async (e) => {
     e.preventDefault();
     if (!email || !password || !confirm) { setError('Please fill in all fields.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('Please enter a valid email address.'); return; }
+    if (password.length < 6) { setError('Password must be at least 6 characters long.'); return; }
     if (password !== confirm)            { setError('Passwords do not match.'); return; }
     if (!agreed)                         { setError('Please accept the Terms of Service.'); return; }
     setLoading(true); setError('');

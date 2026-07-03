@@ -21,19 +21,34 @@ export default function SettingsPage() {
     confirmPassword: ''
   });
 
+  const [profileErrors, setProfileErrors] = useState({});
+  const [passwordErrors, setPasswordErrors] = useState({});
+
   const [activeTab, setActiveTab] = useState('profile');
 
   const handleProfileUpdate = (e) => {
     e.preventDefault();
+    if (!profileData.name?.trim()) {
+      setProfileErrors({ name: 'Full Name is required' });
+      return;
+    }
+    setProfileErrors({});
     alert('Profile update functionality will be connected to the backend.');
   };
 
   const handlePasswordUpdate = (e) => {
     e.preventDefault();
-    if(passwordData.newPassword !== passwordData.confirmPassword) {
-      alert("Passwords don't match!");
+    const errors = {};
+    if (!passwordData.currentPassword) errors.currentPassword = 'Required';
+    if (!passwordData.newPassword) errors.newPassword = 'Required';
+    else if (passwordData.newPassword.length < 6) errors.newPassword = 'Must be at least 6 characters';
+    if (passwordData.newPassword !== passwordData.confirmPassword) errors.confirmPassword = 'Passwords do not match';
+    
+    if (Object.keys(errors).length > 0) {
+      setPasswordErrors(errors);
       return;
     }
+    setPasswordErrors({});
     alert('Password updated successfully!');
     setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
   };
@@ -104,7 +119,9 @@ export default function SettingsPage() {
                         icon={User}
                         value={profileData.name}
                         onChange={(e) => setProfileData({...profileData, name: e.target.value})}
+                        className={profileErrors.name ? 'border-red-500' : ''}
                       />
+                      {profileErrors.name && <p className="text-xs text-red-500 mt-1">{profileErrors.name}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
@@ -151,7 +168,9 @@ export default function SettingsPage() {
                       required
                       value={passwordData.currentPassword}
                       onChange={(e) => setPasswordData({...passwordData, currentPassword: e.target.value})}
+                      className={passwordErrors.currentPassword ? 'border-red-500' : ''}
                     />
+                    {passwordErrors.currentPassword && <p className="text-xs text-red-500 mt-1">{passwordErrors.currentPassword}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">New Password</label>
@@ -161,7 +180,9 @@ export default function SettingsPage() {
                       required
                       value={passwordData.newPassword}
                       onChange={(e) => setPasswordData({...passwordData, newPassword: e.target.value})}
+                      className={passwordErrors.newPassword ? 'border-red-500' : ''}
                     />
+                    {passwordErrors.newPassword && <p className="text-xs text-red-500 mt-1">{passwordErrors.newPassword}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
@@ -171,7 +192,9 @@ export default function SettingsPage() {
                       required
                       value={passwordData.confirmPassword}
                       onChange={(e) => setPasswordData({...passwordData, confirmPassword: e.target.value})}
+                      className={passwordErrors.confirmPassword ? 'border-red-500' : ''}
                     />
+                    {passwordErrors.confirmPassword && <p className="text-xs text-red-500 mt-1">{passwordErrors.confirmPassword}</p>}
                   </div>
 
                   <div className="pt-4 flex justify-end">

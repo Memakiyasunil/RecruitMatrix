@@ -18,6 +18,7 @@ export default function ClientPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingClient, setEditingClient] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const emptyForm = {
     clientName: '', businessName: '', businessDomain: '', address: '', logo: '',
@@ -55,12 +56,14 @@ export default function ClientPage() {
   const openAddModal = () => {
     setEditingClient(null);
     setFormData(emptyForm);
+    setErrors({});
     setIsModalOpen(true);
   };
 
   const openEditModal = (client) => {
     setEditingClient(client);
     setFormData({ ...client });
+    setErrors({});
     setIsModalOpen(true);
   };
 
@@ -75,8 +78,21 @@ export default function ClientPage() {
     }
   };
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.clientName?.trim()) newErrors.clientName = 'Required';
+    if (!formData.businessName?.trim()) newErrors.businessName = 'Required';
+    if (!formData.email?.trim()) newErrors.email = 'Required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email';
+    if (formData.mobile && !/^\+?[\d\s-]{10,}$/.test(formData.mobile)) newErrors.mobile = 'Invalid format';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) return;
     setIsSubmitting(true);
     try {
       if (editingClient) {
@@ -239,11 +255,13 @@ export default function ClientPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Client Full Name *</label>
-              <Input required name="clientName" value={formData.clientName} onChange={handleChange} />
+              <Input required name="clientName" value={formData.clientName} onChange={handleChange} className={errors.clientName ? 'border-red-500' : ''} />
+              {errors.clientName && <p className="text-xs text-red-500 mt-1">{errors.clientName}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
-              <Input required name="businessName" value={formData.businessName} onChange={handleChange} />
+              <Input required name="businessName" value={formData.businessName} onChange={handleChange} className={errors.businessName ? 'border-red-500' : ''} />
+              {errors.businessName && <p className="text-xs text-red-500 mt-1">{errors.businessName}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Business Domain</label>
@@ -255,11 +273,13 @@ export default function ClientPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-              <Input required type="email" name="email" value={formData.email} onChange={handleChange} />
+              <Input required type="email" name="email" value={formData.email} onChange={handleChange} className={errors.email ? 'border-red-500' : ''} />
+              {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Mobile</label>
-              <Input name="mobile" value={formData.mobile} onChange={handleChange} />
+              <Input name="mobile" value={formData.mobile} onChange={handleChange} className={errors.mobile ? 'border-red-500' : ''} />
+              {errors.mobile && <p className="text-xs text-red-500 mt-1">{errors.mobile}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Website</label>
