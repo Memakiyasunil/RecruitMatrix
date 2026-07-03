@@ -147,6 +147,73 @@ const importData = async () => {
       createdAt: admin.firestore.FieldValue.serverTimestamp()
     });
 
+    // 6. Create Masters (Dropdown data)
+    await db.collection('masters').doc('skills').set({
+      category: 'Skills',
+      options: ['React', 'Node.js', 'Firebase', 'MongoDB', 'AWS']
+    });
+    await db.collection('masters').doc('locations').set({
+      category: 'Locations',
+      options: ['Mumbai', 'Bangalore', 'Remote', 'Delhi']
+    });
+
+    // 7. Create Requisitions
+    await db.collection('requisitions').doc('req_001').set({
+      reqNumber: 'REQ-0001',
+      clientId: 'CLT-0001',
+      title: 'Senior React Developer',
+      vacancies: 3,
+      priority: 'High',
+      status: 'Approved',
+      skills: ['React', 'Firebase'],
+      location: 'Remote',
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    // 8. Create Candidates
+    await db.collection('candidates').doc('cand_001').set({
+      candidateId: 'CAND-0001',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'john.doe@example.com',
+      mobile: '9876543212',
+      skills: ['React', 'Node.js'],
+      experience: 5,
+      location: 'Mumbai',
+      status: 'Active',
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    // 9. Create Allocations
+    await db.collection('allocations').doc('alloc_001').set({
+      reqId: 'req_001',
+      assignedTo: 'emp_srdev',
+      assignedBy: 'emp_tech',
+      assignedDate: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'Active'
+    });
+
+    // 10. Create Interviews
+    await db.collection('interviews').doc('int_001').set({
+      reqId: 'req_001',
+      candidateId: 'cand_001',
+      interviewerId: 'emp_srdev',
+      interviewDate: new Date().toISOString(),
+      type: 'Online',
+      status: 'Scheduled',
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    // 11. Create Offers
+    await db.collection('offers').doc('off_001').set({
+      reqId: 'req_001',
+      candidateId: 'cand_001',
+      offeredSalary: '15,00,000 INR',
+      joiningDate: new Date().toISOString(),
+      status: 'Pending',
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
     console.log('Firebase Seeding Complete!');
     process.exit();
   } catch (error) {
