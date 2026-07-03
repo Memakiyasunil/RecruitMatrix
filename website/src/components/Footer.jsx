@@ -25,16 +25,28 @@ export default function Footer() {
           {/* Product */}
           <div>
             <h4 className="font-semibold text-sm mb-4 text-slate-200">Product</h4>
-            {['Features','Services','Pricing','How It Works','Industries'].map(l => (
-              <Link key={l} to={`/${l.toLowerCase().replace(/ /g,'-')}`} className="block text-slate-400 hover:text-white text-sm mb-2 transition-colors">{l}</Link>
+            {[
+              { label: 'Features', path: '/features' },
+              { label: 'Services', path: '/services' },
+              { label: 'Pricing', path: '/pricing' },
+              { label: 'How It Works', path: '/features' },
+              { label: 'Industries', path: '/services' },
+            ].map(l => (
+              <Link key={l.label} to={l.path} className="block text-slate-400 hover:text-white text-sm mb-2 transition-colors">{l.label}</Link>
             ))}
           </div>
 
           {/* Company */}
           <div>
             <h4 className="font-semibold text-sm mb-4 text-slate-200">Company</h4>
-            {['About Us','Careers','Testimonials','Contact Us','Login'].map(l => (
-              <Link key={l} to={`/${l.toLowerCase().replace(/ /g,'-')}`} className="block text-slate-400 hover:text-white text-sm mb-2 transition-colors">{l}</Link>
+            {[
+              { label: 'About Us', path: '/about' },
+              { label: 'Careers', path: '/careers' },
+              { label: 'Testimonials', path: '/about' },
+              { label: 'Contact Us', path: '/contact' },
+              { label: 'Login', path: '/login' },
+            ].map(l => (
+              <Link key={l.label} to={l.path} className="block text-slate-400 hover:text-white text-sm mb-2 transition-colors">{l.label}</Link>
             ))}
           </div>
 

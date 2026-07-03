@@ -157,7 +157,7 @@ export function JobOpeningsPage() {
     try {
       const res = await fetch(`${API}/public/jobs`);
       const data = await res.json();
-      if (data.success) setJobs(data.data);
+      if (data.success && data.data && data.data.length > 0) setJobs(data.data);
       else setJobs(MOCK_JOBS);
     } catch {
       setJobs(MOCK_JOBS);
@@ -534,7 +534,7 @@ export function ApplyPage() {
 
   const inputClass = (field) => `w-full border ${errors[field] ? 'border-red-400' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all`;
 
-  const StepContent = () => {
+  const renderStepContent = () => {
     switch (step) {
       case 0: return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -670,7 +670,7 @@ export function ApplyPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <section className="py-12 px-6" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
+      <section className="pt-28 pb-12 px-6" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-3xl font-bold text-white mb-2">Apply Now</h1>
           <p className="text-white/70">{job?.title || 'Position'}</p>
@@ -696,11 +696,11 @@ export function ApplyPage() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
           <style>{`.label { display: block; font-size: 0.8125rem; font-weight: 600; color: #475569; margin-bottom: 0.375rem; } .err { color: #ef4444; font-size: 0.75rem; margin-top: 0.25rem; }`}</style>
           <h2 className="text-xl font-bold text-slate-800 mb-6">{STEPS[step]}</h2>
-          <StepContent />
+          {renderStepContent()}
         </div>
 
         <div className="flex justify-between mt-6">
-          <button onClick={back} disabled={step === 0} className="px-6 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 disabled:opacity-30 transition-all">
+          <button onClick={step === 0 ? () => navigate(-1) : back} className="px-6 py-3 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-all">
             ← Back
           </button>
           {step < STEPS.length - 1 ? (

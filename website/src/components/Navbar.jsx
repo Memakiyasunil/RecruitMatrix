@@ -23,15 +23,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
+  const isLightHeader = !['/', '/careers', '/careers/jobs', '/careers/track'].includes(pathname) && !pathname.startsWith('/careers/apply/');
+  const effectiveScrolled = scrolled || isLightHeader;
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-md backdrop-blur-md' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${effectiveScrolled ? 'bg-white/95 shadow-md backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg,#6366f1,#0ea5e9)' }}>
             <Briefcase size={18} className="text-white" />
           </div>
-          <span className={`font-bold text-lg ${scrolled ? 'text-slate-800' : 'text-white'}`}>
+          <span className={`font-bold text-lg ${effectiveScrolled ? 'text-slate-800' : 'text-white'}`}>
             Recruit<span className="text-indigo-400">Matrix</span>
           </span>
         </Link>
@@ -42,7 +45,7 @@ export default function Navbar() {
             <Link key={path} to={path}
               className={`text-sm font-medium transition-colors ${pathname === path
                 ? 'text-indigo-400'
-                : scrolled ? 'text-slate-600 hover:text-indigo-600' : 'text-white/80 hover:text-white'}`}>
+                : effectiveScrolled ? 'text-slate-600 hover:text-indigo-600' : 'text-white/80 hover:text-white'}`}>
               {label}
             </Link>
           ))}
@@ -50,7 +53,7 @@ export default function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="http://localhost:5173/login" className={`text-sm font-medium px-4 py-2 rounded-xl border transition-all ${scrolled ? 'border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-600' : 'border-white/30 text-white hover:border-white'}`}>
+          <a href="http://localhost:5173/login" className={`text-sm font-medium px-4 py-2 rounded-xl border transition-all ${effectiveScrolled ? 'border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-600' : 'border-white/30 text-white hover:border-white'}`}>
             Admin Login
           </a>
           <a href="http://localhost:5174/login"
@@ -61,7 +64,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button className={`md:hidden ${scrolled ? 'text-slate-700' : 'text-white'}`} onClick={() => setOpen(!open)}>
+        <button className={`md:hidden ${effectiveScrolled ? 'text-slate-700' : 'text-white'}`} onClick={() => setOpen(!open)}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
